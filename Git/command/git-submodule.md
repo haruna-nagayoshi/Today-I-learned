@@ -25,12 +25,11 @@ laradockは、中身はカスタマイズせずにgit submoduleで利用し、�
 すごく便利そうなので、laradockについてもう少し深く知りたい。 
 
 laradock 参考：  
-Laradockでの環境構築方法２パターンを細かめに説明
-https://qiita.com/wajima/items/69fad6c2b42c52928e82
+[Laradockでの環境構築方法２パターンを細かめに説明](https://qiita.com/wajima/items/69fad6c2b42c52928e82)
 
 
 ## 使い方
-参考：http://vdeep.net/git-submodule  
+参考：[Gitのサブモジュール機能を使ってプロジェクトを管理してみよう](http://vdeep.net/git-submodule)  
 
 #### サブモジュールを追加する
 ①サブモジュールを追加  
@@ -98,13 +97,6 @@ $ git submodule init
 $ git submodule update
 ```
 
-
-## そのほか参考
-Git submodule の基礎
-https://qiita.com/sotarok/items/0d525e568a6088f6f6bb
-
-Git のサブモジュールってどんなもの？
-https://qiita.com/go_astrayer/items/8667140aef8875742a36
 
 ## おまけ
 - githubよりgitlabのMarkdownのほうが書きやすい気がする。ソースを囲った場合の色等がはっきりしているし、画像もすぐにUPできるから。使い方に慣れていないだけかも。
