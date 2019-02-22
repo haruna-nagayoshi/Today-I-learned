@@ -99,6 +99,13 @@ $ git submodule update
 ```
 
 
+## そのほか参考
+Git submodule の基礎
+https://qiita.com/sotarok/items/0d525e568a6088f6f6bb
+
+Git のサブモジュールってどんなもの？
+https://qiita.com/go_astrayer/items/8667140aef8875742a36
+
 ## おまけ
 - githubよりgitlabのMarkdownのほうが書きやすい気がする。ソースを囲った場合の色等がはっきりしているし、画像もすぐにUPできるから。使い方に慣れていないだけかも。
 - LaravelもLaravel Collectiveも英語であってもレファレンスを読む気になるけど、Gitは読む気になれない・・・。ので、今回参考にしたサイトの存在はありがたいし丁寧で分かりやすかった。
