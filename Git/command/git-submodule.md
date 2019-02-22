@@ -102,4 +102,3 @@ $ git submodule update
 ## おまけ
 - githubよりgitlabのMarkdownのほうが書きやすい気がする。ソースを囲った場合の色等がはっきりしているし、画像もすぐにUPできるから。使い方に慣れていないだけかも。
 - LaravelもLaravel Collectiveも英語であってもレファレンスを読む気になるけど、Gitは読む気になれない・・・。ので、今回参考にしたサイトの存在はありがたいし丁寧で分かりやすかった。
-- と思ってたら日本語でも読めるの知らなかった。https://git-scm.com/book/ja/v2
