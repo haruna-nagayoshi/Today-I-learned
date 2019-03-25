@@ -51,6 +51,6 @@ class StudentType extends Enum
 ```
 
 #### 参考
-[PHP の static と self の違い](https://gotohayato.com/content/488)
-[PHPのself::とstatic::の違い](https://tohokuaiki.hateblo.jp/entry/2016/12/16/PHP%E3%81%AEself%3A%3A%E3%81%A8static%3A%3A%E3%81%AE%E9%81%95%E3%81%84)
-[PHPで「self::」と「$this」の違いを理解する。](http://note.onichannn.net/archives/648)
+[PHP の static と self の違い](https://gotohayato.com/content/488)  
+[PHPのself::とstatic::の違い](https://tohokuaiki.hateblo.jp/entry/2016/12/16/PHP%E3%81%AEself%3A%3A%E3%81%A8static%3A%3A%E3%81%AE%E9%81%95%E3%81%84)  
+[PHPで「self::」と「$this」の違いを理解する。](http://note.onichannn.net/archives/648)  
