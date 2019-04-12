@@ -15,4 +15,9 @@ Shared drives の部分もチェック付け外ししたからどっちも原因
 チェックが入ることはなかった。  
 [参考](https://kantaro-cgi.com/blog/docker/shared-drives-cant-checked.html)  
 
+**追記2 Cドライブのチェックと認証リセットするしかないかも**  
+他のひとにみてもらったが、なぜCドライブへのマウントが外れるかは謎。  
+なんらかの原因によりDockerの接続が再生成され、カスペルスキーに遮断されるときに「許可するネットワーク」ではなく「パブリックなネットワーク」になるから説。    
+[つまりこの方法](https://utsu-programmer.com/environment/docker-mount-error/)  
+
 ![image](https://user-images.githubusercontent.com/38639386/55861024-75c92900-5bb0-11e9-8811-512a2a6ee62d.png)
