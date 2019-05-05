@@ -12,9 +12,9 @@ if, for, whileなどの括弧は、
 ```php
 if( $age>20 )
 { // 処理 }
-```
+
 ↓
-```php
+
 if ($age > 20) {
     // 処理
 }
@@ -33,9 +33,9 @@ class MessageBag {
         // 省略
     }
 }
-```
+
 ↓
-```php
+
 class MessageBag
 {
     public function __construct($array = [])
@@ -51,18 +51,18 @@ class MessageBag
 public function __construct($key,$value ,$message) {
 
 }
-```
+
 ↓
-```php
+
 public function __construct($key, $value, $message) {
 
 }
 ```
 
 #### else ifより、elseifを使う
-elseif分岐をあまり書かないから意識してなかったけど、AtCorderで解いた問題を見返したらelse ifって書いてた・・・。  
-[マニュアル](https://www.php.net/manual/ja/control-structures.elseif.php)によると、どちらを使っても挙動は全く同じだけど、文法的には異なる。
-else if を使った場合、さらにネストが深くなることになるらしい。
+elseif分岐をあまり書かないから意識してなかったけど、AtCorderで解いた問題を見返したらelse ifって書いてた・・・。   
+[マニュアル](https://www.php.net/manual/ja/control-structures.elseif.php)によると、どちらを使っても挙動は全く同じだけど、文法的には異なる。  
+else if を使った場合、さらにネストが深くなることになるらしい。  
 参考  
 http://piyopiyocs.blog115.fc2.com/blog-entry-937.html  
 https://blog-ja.sideci.com/entry/PHP-codingstyles  
@@ -73,6 +73,11 @@ https://blog-ja.sideci.com/entry/PHP-codingstyles
 ```php
 $name1 = 'Taro';
 $name2 = 'Tanaka';
+
+↓
+
+$firstName = 'Taro';
+$lastName = 'Tanaka';
 ```
 ```php
 // 青信号ってどれだっけ？
@@ -83,13 +88,9 @@ if ($trafficLight === 1) {
 } elseif ($trafficLight === 3) {
     // 処理
 }
-```
+
 ↓
-```php
-$firstName = 'Taro';
-$lastName = 'Tanaka';
-```
-```php
+
 // Enumの定義は省略
 if ($trafficLight === TrafficLight::bule) {
     // 処理
@@ -101,7 +102,7 @@ if ($trafficLight === TrafficLight::bule) {
 ```
 
 #### PHPDocを書く
-主にPhpStormによる補完のために書く。
+主にPhpStormによる補完のために、メソッドの前に書く。
 `/** + Enter` で自動入力される。
 
 #### コメントを書かない
@@ -112,13 +113,15 @@ if ($trafficLight === TrafficLight::bule) {
 $id = 123;
 // 企業名
 $name = 'ABC';
-```
-```php
+
+↓
+
 $companyId = 123;
 $companyName = 'ABC';
 ```
+
 コメントを書いてよいのは、特別な理由があって通常とは異なる処理をしているときなどに限る。  
-```
+```php
 // 一般的には処理速度の速い処理Aを実行するべきだが、〇〇のため処理Bを行う。
 if ($a > 1000) {
     // 処理B
@@ -131,9 +134,9 @@ if ($a > 1000) {
 $id    = 123;
 $name  = 'ABC';
 $eamil = 'example@example.com';
-```
+
 ↓
-```php
+
 $id = 123;
 $name = 'ABC';
 $eamil = 'example@example.com';
