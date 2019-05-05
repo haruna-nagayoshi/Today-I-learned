@@ -59,7 +59,13 @@ public function __construct($key, $value, $message) {
 }
 ```
 
-#### else ifではなく、elseifを使う
+#### else ifより、elseifを使う
+elseif分岐をあまり書かないから意識してなかったけど、AtCorderで解いた問題を見返したらelse ifって書いてた・・・。  
+[マニュアル](https://www.php.net/manual/ja/control-structures.elseif.php)によると、どちらを使っても挙動は全く同じだけど、文法的には異なる。
+else if を使った場合、さらにネストが深くなることになるらしい。
+参考  
+http://piyopiyocs.blog115.fc2.com/blog-entry-937.html  
+https://blog-ja.sideci.com/entry/PHP-codingstyles  
 
 #### マジックナンバーを使わない
 マジックナンバーとは、　　　あとでかく  
@@ -136,3 +142,7 @@ $eamil = 'example@example.com';
 #### Don't Repeat Yourself DRY原則
 
 #### YAGNI原則
+
+## かんそう
+書こう書こうと思って数日経過してやっと書けた・・・。ずっとごろごろしてたくもあり出かけたくもあり・・・。  
+意外と書くのに時間がかかる。  
