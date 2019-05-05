@@ -5,6 +5,24 @@ PSR‐2とかそうじゃないものもいろいろ。
 [PHP 公式マニュアル](https://www.php.net/manual/ja/index.php)  
 [PSR-2](https://www.php-fig.org/psr/psr-2/)  
 
+#### returnの前は改行する
+たまに忘れる。  
+コードは処理のまとまりごと・意味ごとに書いたほうが分かりやすい。処理内容と結果は分けてかく。
+```php
+if ($age > 20) {
+    return 'お酒が飲めるよ';
+}
+return 'お酒はダメ';
+```
+↓
+```php
+if ($age > 20) {
+    return 'お酒が飲めるよ'; // return1行だけの場合は改行しなくてよい
+}
+
+return 'お酒はダメ';
+```
+
 #### 制御構文の括弧
 if, for, whileなどの括弧は、
 * `{` の前は改行しない。
@@ -20,6 +38,19 @@ if( $age>20 )
 
 if ($age > 20) {
     // 処理
+}
+```
+
+```php
+for ( $i=1;$i<$n;$i++ ) {
+    // くっついてると、ぱっと見分かりにくい。
+}
+
+↓
+
+for ($i = 1; $i < $n; $i++) {
+    // 四則演算、等号、不等号などの記号の前後は半角スペースを空ける。  
+    // ;の後に空白スペースを空ける。
 }
 ```
 
@@ -105,8 +136,9 @@ if ($trafficLight === TrafficLight::bule) {
 ```
 
 #### PHPDocを書く
-主にPhpStormによる補完のために、メソッドの前に書く。
-`/** + Enter` で自動入力される。
+主にPhpStormによる補完のために、メソッドの前に書く。  
+`/** + Enter` で自動入力される。  
+PHPDoc内でも、returnの前は1行空ける。  
 
 #### コメントを書かない
 クラス名、関数名、変数名でどんな処理なのかを表すことができれば、コメントは必要ない。  
@@ -137,13 +169,29 @@ if ($a > 1000) {
 $id    = 123;
 $name  = 'ABC';
 $eamil = 'example@example.com';
-
+```
 ↓
-
+```php
 $id = 123;
 $name = 'ABC';
 $eamil = 'example@example.com';
 ```
+
+#### 否定の!は後ろに空白スペースを入れる。
+```php
+if (!$this->messages->has($attribute)) {
+    // ...
+}
+
+↓
+
+if (! $this->messages->has($attribute)) {
+    // こっちのほうが見やすい
+}
+```
+
+#### ただし、ファイルの末尾には空白を1行入れる。  
+gitで管理する場合？
 
 #### Don't Repeat Yourself DRY原則
 
