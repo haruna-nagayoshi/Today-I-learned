@@ -62,7 +62,7 @@ public function __construct($key, $value, $message) {
 #### else ifより、elseifを使う
 elseif分岐をあまり書かないから意識してなかったけど、AtCorderで解いた問題を見返したらelse ifって書いてた・・・。   
 [マニュアル](https://www.php.net/manual/ja/control-structures.elseif.php)によると、どちらを使っても挙動は全く同じだけど、文法的には異なる。  
-else if を使った場合、さらにネストが深くなることになるらしい。  
+else if を使った場合、一段階ネストが深いif ~ else ~ になるらしい。  
 参考  
 http://piyopiyocs.blog115.fc2.com/blog-entry-937.html  
 https://blog-ja.sideci.com/entry/PHP-codingstyles  
