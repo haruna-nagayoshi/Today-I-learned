@@ -2,6 +2,9 @@
 PSR‐2とかそうじゃないものもいろいろ。  
 コードを書く時のルールが人によってまちまちだと、とても見づらくなるので統一するべき。  
 
+[PHP 公式マニュアル](https://www.php.net/manual/ja/index.php)  
+[PSR-2](https://www.php-fig.org/psr/psr-2/)  
+
 #### 制御構文の括弧
 if, for, whileなどの括弧は、
 * `{` の前は改行しない。
