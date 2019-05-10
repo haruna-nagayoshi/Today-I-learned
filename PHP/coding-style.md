@@ -190,7 +190,7 @@ if (! $this->messages->has($attribute)) {
 }
 ```
 
-#### ただし、ファイルの末尾には空白を1行入れる。  
+#### ファイルの末尾には空白を1行入れる。  
 gitで管理する場合？
 
 #### Don't Repeat Yourself DRY原則
