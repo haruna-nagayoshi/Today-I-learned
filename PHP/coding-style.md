@@ -194,6 +194,7 @@ if (! $this->messages->has($attribute)) {
 gitで管理する場合？
 
 #### Don't Repeat Yourself DRY原則
+あとでかく  
 ※必ずしもこの原則が正しいわけではない。  
 
 #### YAGNI原則
