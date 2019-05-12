@@ -50,11 +50,11 @@ $count = count($values);
 $i = 0;
 $values[$count] = $n;
 while ($values[$i] !== $n) {
-	$i++;
+    $i++;
 }
 
 if ($i === $count) {
-	echo 'Not Found';
+    echo 'Not Found';
 }
 
 echo $i + 1;
