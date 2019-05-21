@@ -101,6 +101,23 @@ else if を使った場合、一段階ネストが深いif ~ else ~ になるら
 http://piyopiyocs.blog115.fc2.com/blog-entry-937.html  
 https://blog-ja.sideci.com/entry/PHP-codingstyles  
 
+**追記**  
+if文で:を使う場合、ってなんだ？とおもってたけど、素のPHPは:を使う・・・！  
+ということに素のPHPもLaravelも使っている保守案件で気づいた。  
+```php
+<div>
+    <?php if ($user->authenticated() && $user->age >= 20): ?>
+        // ...
+    <?php elseif ($user->authenticated() && $user->age < 20): ?>
+        // ...
+    <?php else: ?>
+        // ...
+    <?php endif; ?>
+</div>
+```
+こういうときはelse if は不可、elseifを必ず使う必要がある、ということ。  
+(条件文が適当すぎる・・・)  
+
 #### マジックナンバーを使わない
 マジックナンバーとは、　　　あとでかく  
 意味のある変数名に変えたり、Enumを利用する。  
