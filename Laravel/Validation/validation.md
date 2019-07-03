@@ -69,4 +69,4 @@ https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in
 
 ## 疑問
 [a-zA-Z0-9_-]は、_以降という表現にならないのか？
-[-{] だと、{まで、という意味になるのに・・・？
+`[-{] ` だと、`{` まで、という意味になるのに・・・？
