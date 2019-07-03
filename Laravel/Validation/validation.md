@@ -68,5 +68,6 @@ https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in
 →ギリシャ数字だけでなく、ローマ数字なども含むらしい。  
 
 ## 疑問
-[a-zA-Z0-9_-]は、_以降という表現にならないのか？
-`[-{] ` だと、`{` まで、という意味になるのに・・・？
+[a-zA-Z0-9_-]は、_以降という表現にならないのか？  
+`[-{] ` だと、`{` まで、という意味になるのに・・・？ 
+[ASCII](https://ja.wikipedia.org/wiki/ASCII)が基準だから、 `[-{] ` は「最初から{までの文字」ということになるのだろうか...｡
