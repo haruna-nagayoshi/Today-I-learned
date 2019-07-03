@@ -49,7 +49,7 @@ Unicode 文字プロパティに含まれる、実際の値はこのサイトに
 https://www.fileformat.info/info/unicode/category/index.htm
 
 
-####　参考
+#### 参考
 https://blog.tes.co.jp/entry/2018/06/29/145450  
 https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p  
 
