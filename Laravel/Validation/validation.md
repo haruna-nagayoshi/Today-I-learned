@@ -15,10 +15,10 @@
 
 ([weblio](https://www.weblio.jp/content/%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1%E3%83%99%E3%83%83%E3%83%88)より)
 
-Laravelの定義済みバリデーション `alpha` ,  `alpha_num` , `alpha_dash` もこのような意味で名づけられていると思われる。  
+Laravelの定義済みバリデーション `alpha` ,  `alpha_num` , `alpha_dash` も、恐らくこのような意味で名づけられている。  
 もし、「 `[a-zA-Z]` であること」をバリデートするバリデーションが必要な場合は、オーバーライドするか、独自のバリデーションを新たに定義しなければならない。  
 
-####  `alpha` ,  `alpha_num` , `alpha_dash` に共通する、 `[\pL\pM\pN]` について
+####  `alpha` ,  `alpha_num` , `alpha_dash` に共通する、 `[\pL\pM\pN]` とは何か
 バリデーションの定義の中身をみると、 `preg_match('/^[\pL\pM\pN_-]+$/u', $value)` と書いてある。
 
 ```php
@@ -45,49 +45,15 @@ L  アルファベット (Letter)	Ll、 Lm、Lo、Lt および Lu を含む
 M  記号 (Mark)
 N  数字 (Number)
 ```
-
-https://en.wikipedia.org/wiki/Template:General_Category_(Unicode)
-Letter Mark Numberが指定されるということ。
+Unicode 文字プロパティに含まれる、実際の値はこのサイトに書かれているものだと思われる。
 https://www.fileformat.info/info/unicode/category/index.htm
 
-でもMarkに該当すると思われるものをPOSTMANで投げてみてもバリデーションエラーになる
 
 他参考
-https://blog.tes.co.jp/entry/2018/06/29/145450
-https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p (edited)
+https://blog.tes.co.jp/entry/2018/06/29/145450  
+https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p  
 
-【やったこと】
-①Markに当てはまるのは、
-濁点やアクセント記号のような
-文字に添えられる記号(例：Ã)らしいが、
-~やÃを入れても弾かれる。なぜだ。
-
-②
-しかも、ひらがなでも、「あ」は通過するが、「ほ」は通らない。
-これは境目があるのでは？と思い、試しにあいうえお順に「ほ～ん」で入れてみると弾かれる。濁点をつけても同様。
-「あ～へ」を全て試すのはしんどいので、いくつかランダムに入れてみたけど、「あ」「う」「こ」「て」「ぎ」「べ」「ぺ」などは通る。
-しかし「ぜ」は入らなかった　？？？
-https://www.fileformat.info/info/unicode/category/Lo/list.htm
-このリストを信じてよいのであれば、「ぺ」と「ほ」が境界になっているのか？
-記号とは文字に結合されているものを指し単体の「゛」「゜」は含まないということか？
-と思ったけど、どうも違うらしい。
-「さ」「ざ」は通るのに「そ」「ぞ」「せ」「ぜ」は通らない。
-「て」「で」は通るのに「だ」「た」は通らない。
-カタカナは恐らく全滅。
-漢字は、漢数字の「一」はBadRequestになる。なんでだ。「二」はバリデーションエラーとして弾かれる。
-
-結局alphaはどういうバリデーションなんだ？？？
-Unicodeで指定されているLMNなんだから、同じはずなんだけど・・・
-
-【やったこと2】
-↑で試したことは、GETパラメータで試していたから発生していたことがわかった。
-URLに書いたひらがなは別の文字に変換されていた。
-例) 000ざ　→　000V
-
-JSONで渡したら平仮名も片仮名もOKだった。
-でも、濁点や鍵括弧などは通らない・・・ (edited)
-
-haruna nagayoshi パ [1 month ago]
+#### そのほか調べたこと
 alpha /^[pLpMpN]+$/u
 custom_alpha_num /^[pLpMpN]+$/
 二つの違いは、最後にuがつくかつかないか。
@@ -98,9 +64,9 @@ https://tinybeans.net/blog/2016/03/14-110954.html
 これを回避するには、正規表現にパターン修飾子の u を付けて、パターンと対象文字列を UTF-8 として処理するように明示します（文字コードが UTF-8 であるのが前提）。
 
 マルチバイト対応、にするためのもの？
-http://okumocchi.jp/php/re.php (edited)
+http://okumocchi.jp/php/re.php 
 
-haruna nagayoshi パ [1 month ago]
+
 http://d.hatena.ne.jp/sutara_lumpur/20100904/1283565264
 検索対象の中にある日本語が合っても、
 正規表現のなかに日本語がなければu修飾子はつけなくてもいいらしい？？？
