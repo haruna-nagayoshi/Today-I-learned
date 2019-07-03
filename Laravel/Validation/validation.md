@@ -49,15 +49,11 @@ Unicode 文字プロパティに含まれる、実際の値はこのサイトに
 https://www.fileformat.info/info/unicode/category/index.htm
 
 
-他参考
+####　参考
 https://blog.tes.co.jp/entry/2018/06/29/145450  
 https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p  
 
-#### そのほか
-alpha /^[pLpMpN]+$/u
-custom_alpha_num /^[pLpMpN]+$/
-二つの違いは、最後にuがつくかつかないか。
-
+## 未確認
 正規表現のパターンのなかに日本語などのマルチバイトがあるときは、パターン修飾子の u を付けて、  
 パターンと対象文字列を UTF-8 として処理するように明示する必要があるらしい（文字コードが UTF-8 であるのが前提）。  
 
@@ -75,12 +71,9 @@ https://qiita.com/mpyw/items/8dd5378cb01c877e1f7b#pcre%E6%AD%A3%E8%A6%8F%E8%A1%A
 http://d.hatena.ne.jp/sutara_lumpur/20100904/1283565264
 
 
-#### 疑問
-[a-zA-Z0-9_-]は、_以降という表現にならないのか？
-[-{] だと、{まで、という意味になるのに・・・？
-
-
-#### 未確認
 * [numericは[0-9]であることをバリデートしていない(未確認)](https://hnw.hatenablog.com/entry/20180414)  
 →ギリシャ数字だけでなく、ローマ数字なども含むらしい。
 
+## 疑問
+[a-zA-Z0-9_-]は、_以降という表現にならないのか？
+[-{] だと、{まで、という意味になるのに・・・？
