@@ -53,48 +53,34 @@ https://www.fileformat.info/info/unicode/category/index.htm
 https://blog.tes.co.jp/entry/2018/06/29/145450  
 https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p  
 
-#### そのほか調べたこと
+#### そのほか
 alpha /^[pLpMpN]+$/u
 custom_alpha_num /^[pLpMpN]+$/
 二つの違いは、最後にuがつくかつかないか。
-このuは、パターンと対象文字列をUTF-8として扱うためのものらしい。
+
+正規表現のパターンのなかに日本語などのマルチバイトがあるときは、パターン修飾子の u を付けて、  
+パターンと対象文字列を UTF-8 として処理するように明示する必要があるらしい（文字コードが UTF-8 であるのが前提）。  
 
 https://tinybeans.net/blog/2016/03/14-110954.html
 
-これを回避するには、正規表現にパターン修飾子の u を付けて、パターンと対象文字列を UTF-8 として処理するように明示します（文字コードが UTF-8 であるのが前提）。
-
-マルチバイト対応、にするためのもの？
 http://okumocchi.jp/php/re.php 
 
-
-http://d.hatena.ne.jp/sutara_lumpur/20100904/1283565264
-検索対象の中にある日本語が合っても、
-正規表現のなかに日本語がなければu修飾子はつけなくてもいいらしい？？？
-
-絵文字バリデーションとかも、/uつけないとだめ？
-つけなくてもよい？
-はてなダイアリー
-【PHP】preg系で日本語を使う場合、パターン修飾子『u』は不可欠 - すたら日記
-結論 (2018年8月2日現在) 検索対象にマルチバイト文字が含まれていても、抽出したい文字に含まれていなけれ..
-
-
 http://codaholic.org/?p=1671
-やっぱ正規表現のなかに日本語があるときuが必要？
-Codaholic
-[PHP]preg_matchの正規表現の中で日本語（マルチバイト文字）を使う
-正規表現の中で日本語（マルチバイト文字）を使ってマッチさせるには、パターン修飾子というものを使う必要がありまし…
-
-
 
 https://qiita.com/mpyw/items/8dd5378cb01c877e1f7b#pcre%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%96%A2%E6%95%B0%E3%81%AE%E4%BF%AE%E9%A3%BE%E5%AD%90%E3%82%84%E3%83%A1%E3%82%BF%E6%96%87%E5%AD%97%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%A8%E6%84%8F
-そうっぽい 
+
+
+検索対象の中にある日本語が合っても、
+正規表現のなかに日本語がなければu修飾子はつけなくてもいいらしい？？？
+http://d.hatena.ne.jp/sutara_lumpur/20100904/1283565264
+
 
 #### 疑問
 [a-zA-Z0-9_-]は、_以降という表現にならないのか？
-[-{] だと、　{まで、という意味になるのに・・・？
+[-{] だと、{まで、という意味になるのに・・・？
 
 
-#### いつか調べる
+#### 未確認
 * [numericは[0-9]であることをバリデートしていない(未確認)](https://hnw.hatenablog.com/entry/20180414)  
 →ギリシャ数字だけでなく、ローマ数字なども含むらしい。
 
