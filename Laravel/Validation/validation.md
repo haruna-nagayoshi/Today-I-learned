@@ -1,4 +1,4 @@
-# laravelのバリデーションが日本語でのイメージとは違う
+# laravelのalphaバリデーションが日本語でのイメージとは違う
 ## 結論
 * [公式](https://laravel.com/)や
 [日本語訳](https://readouble.com/laravel/5.5/ja/validation.html#available-validation-rules)の解説文を読むだけではだめで、コードを読むべき。  
@@ -39,7 +39,7 @@ Laravelの定義済みバリデーション `alpha` ,  `alpha_num` , `alpha_dash
     }
 ```
 pL, pM, pNとは、[PHPマニュアル](http://php.net/manual/ja/regexp.reference.unicode.php)によるとUnicode 文字プロパティのこと。  
-つまり、 `[\pL\pM\pN]` と定義すると、以下の文字を含むということになる。
+つまり、 `[\pL\pM\pN]` は、以下の文字を含むということになる。
 ```
 L  アルファベット (Letter)	Ll、 Lm、Lo、Lt および Lu を含む
 M  記号 (Mark)
@@ -54,25 +54,18 @@ https://blog.tes.co.jp/entry/2018/06/29/145450
 https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/character-classes-in-regular-expressions#unicode-category-or-unicode-block-p  
 
 ## 未確認
-正規表現のパターンのなかに日本語などのマルチバイトがあるときは、パターン修飾子の u を付けて、  
+* 正規表現の中で日本語などのマルチバイトを使ってマッチさせるには、パターン修飾子の u を付けて、  
 パターンと対象文字列を UTF-8 として処理するように明示する必要があるらしい（文字コードが UTF-8 であるのが前提）。  
 
-https://tinybeans.net/blog/2016/03/14-110954.html
+以下参考サイト  
+[PHP の preg_replace には u 修飾子をつけた方がいい](https://tinybeans.net/blog/2016/03/14-110954.html)  
 
-http://okumocchi.jp/php/re.php 
+[[PHP]preg_matchの正規表現の中で日本語（マルチバイト文字）を使う](http://codaholic.org/?p=1671)  
 
-http://codaholic.org/?p=1671
-
-https://qiita.com/mpyw/items/8dd5378cb01c877e1f7b#pcre%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%96%A2%E6%95%B0%E3%81%AE%E4%BF%AE%E9%A3%BE%E5%AD%90%E3%82%84%E3%83%A1%E3%82%BF%E6%96%87%E5%AD%97%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%A8%E6%84%8F
-
-
-検索対象の中にある日本語が合っても、
-正規表現のなかに日本語がなければu修飾子はつけなくてもいいらしい？？？
-http://d.hatena.ne.jp/sutara_lumpur/20100904/1283565264
-
+[私の正規表現におけるポリシー](https://qiita.com/mpyw/items/8dd5378cb01c877e1f7b#pcre%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%96%A2%E6%95%B0%E3%81%AE%E4%BF%AE%E9%A3%BE%E5%AD%90%E3%82%84%E3%83%A1%E3%82%BF%E6%96%87%E5%AD%97%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%A8%E6%84%8F)  
 
 * [numericは[0-9]であることをバリデートしていない(未確認)](https://hnw.hatenablog.com/entry/20180414)  
-→ギリシャ数字だけでなく、ローマ数字なども含むらしい。
+→ギリシャ数字だけでなく、ローマ数字なども含むらしい。  
 
 ## 疑問
 [a-zA-Z0-9_-]は、_以降という表現にならないのか？
