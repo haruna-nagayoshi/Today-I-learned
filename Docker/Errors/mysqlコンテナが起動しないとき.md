@@ -10,4 +10,5 @@ https://qiita.com/n_oshiumi/items/2413665c04ea65904a3c
 前後のエラーはメモし忘れた。  
 容量不足のために起動しないことが原因らしい。  
 `docker volume prune` で掃除したら正常に起動した。   
-https://teratail.com/questions/51944  
+https://teratail.com/questions/51944   
+https://docs.docker.com/engine/reference/commandline/volume_prune/  
