@@ -10,7 +10,7 @@ https://qiita.com/shibukawa/items/19ab5c381bbb2e09d0d9
 もっときれいで新しい書き方ができるように調べて他の人にも書かせたい。    
 
 【全員読む】    
-① varは使わない  
+① **varは使わない**  
 ②constとletの使い分け  
 *  基本は const で定義する。  
 *  let を使うのは、変数を再代入する必要があるとき。  
