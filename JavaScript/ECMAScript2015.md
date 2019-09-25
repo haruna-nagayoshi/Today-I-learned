@@ -1,4 +1,4 @@
-正直、ECMSScript2015については、jsprimerを読んでおけばどうにかなると思う。
+正直、ECMSScript2015については、jsprimerを読んでおけばどうにかなると思う。  
 https://jsprimer.net  
 
 Qiitaで古くない文法は切り捨てましょう、というまとめ記事があったので貼っておく。  
